@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>零收入起步：數位商品創業指南</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Outfit', '"Noto Sans TC"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            dark: '#07070a',
+            glass: 'rgba(255, 255, 255, 0.03)',
+            glassBorder: 'rgba(255, 255, 255, 0.08)',
+          },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;700;900&display=swap');
+    
+    @layer utilities {
+      .glass-card {
+        @apply bg-glass backdrop-blur-xl border border-glassBorder rounded-3xl p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:bg-white/[0.05];
+      }
+      .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400;
+      }
+      .text-gradient-subtle {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500;
+      }
+    }
+
+    body {
+      background-color: #07070a;
+      color: #e5e7eb;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07070a; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #374151; 
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4b5563; 
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-fuchsia-500/30 selection:text-fuchsia-200">
+
+  <!-- Ambient Background -->
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-violet-600/10 mix-blend-screen filter blur-[100px] animate-blob"></div>
+    <div class="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-fuchsia-600/10 mix-blend-screen filter blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-[-20%] left-[20%] w-[60vw] h-[60vw] rounded-full bg-cyan-600/10 mix-blend-screen filter blur-[120px] animate-blob" style="animation-delay: 4s;"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDIiLz4KPC9zdmc+')] opacity-20"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="relative z-10 min-h-[90vh] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24">
+    <div class="max-w-4xl w-full flex flex-col items-center gap-12 opacity-0 animate-fade-in-up">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+        <span class="flex h-2 w-2 rounded-full bg-cyan-400"></span>
+        <span class="text-sm font-medium text-gray-300">數位行銷創業指南</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-black text-center leading-tight tracking-tight text-white drop-shadow-2xl">
+        零收入起步<br>
+        <span class="text-gradient">數位商品創業</span>
+      </h1>
+      
+      <div class="glass-card mt-8 w-full max-w-3xl relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-4 relative z-10">
+          <span class="flex items-center justify-center w-10 h-10 bg-white text-dark rounded-xl font-display font-black text-lg shadow-[0_0_20px_rgba(255,255,255,0.3)]">01</span> 
+          寫在前面：掌握漏斗頂端流量
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed text-lg md:text-xl relative z-10 font-light">
+          剛起步經營數位行銷，你需要吸引眼球的內容。這份指南直接提供預先寫好的開場白與文案。發布<span class="text-white font-bold">100支短影音</span>。打開Instagram後台看數據。挑出觀看數最高的那支影片。套用不同的背景畫面。換上一首熱門音樂。你甚至可以一字不漏地重新上傳。執行這些步驟時，去Instagram限時動態標記我 
+          <span class="inline-block px-2 py-1 mt-1 rounded-md bg-fuchsia-500/20 text-fuchsia-300 font-semibold border border-fuchsia-500/30">@thedigitalclassy</span>。讓我看看你的執行進度。
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pillars Section -->
+  <section class="relative z-10 max-w-7xl mx-auto p-6 md:p-12 lg:px-24 py-20">
+    <div class="text-center mb-20 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 flex items-center justify-center gap-4">
+        <span class="text-white/20">02</span>
+        六大短影音內容支柱
+      </h2>
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
+        粉絲數掛零。沒有營收對帳單。這時候該發布什麼內容？我們拆解出 <span class="text-cyan-400 font-medium">6種不需要炫耀收入</span> 的創作方向。
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+      
+      <!-- Motivation -->
+      <div class="glass-card group flex flex-col opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 group-hover:bg-orange-500/20 transition-all duration-300 shadow-[0_0_30px_rgba(249,115,22,0)] group-hover:shadow-[0_0_30px_rgba(249,115,22,0.2)]">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">激勵型內容</h3>
+        <p class="text-gray-400 leading-relaxed font-light flex-1">
+          這類內容負責吸引新粉絲。觀眾會點下愛心、分享給朋友，或者點擊收藏。這裡不賣產品。你只負責建立信任。展現你的核心價值觀。打醒觀眾的現實巴掌。傳遞純粹的正能量。記錄個人成長的體悟。多方測試這幾種切入點。找出最適合你版面的發言風格。
+        </p>
+      </div>
+
+      <!-- Education -->
+      <div class="glass-card group flex flex-col opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300 shadow-[0_0_30px_rgba(34,211,238,0)] group-hover:shadow-[0_0_30px_rgba(34,211,238,0.2)]">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">教學型內容</h3>
+        <p class="text-gray-400 leading-relaxed font-light flex-1">
+          拿出權威專家的架子說話。告訴觀眾你懂這門生意。分享你的帳號增長技巧。破解業界迷思。推薦你手機裡的剪輯App。打開你的Canva操作畫面。這些乾貨會衝高貼文的收藏數。
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div class="glass-card group flex flex-col opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">
+        <div class="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-6 text-violet-400 group-hover:scale-110 group-hover:bg-violet-500/20 transition-all duration-300 shadow-[0_0_30px_rgba(139,92,246,0)] group-hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">願景型內容</h3>
+        <p class="text-gray-400 leading-relaxed font-light flex-1">
+          刺激觀眾的想像力。你現在還沒賺到錢。沒關係。去截圖其他人的產品好評論。把這些見證發出來。直接點出觀眾的痛點。解決他們的渴望。不要對著所有人喊話。鎖定一個具體對象。針對「每天只有一小時能用電腦的媽媽」寫文案。
+        </p>
+      </div>
+
+      <!-- Vulnerability -->
+      <div class="glass-card group flex flex-col opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
+        <div class="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mb-6 text-pink-400 group-hover:scale-110 group-hover:bg-pink-500/20 transition-all duration-300 shadow-[0_0_30px_rgba(236,72,153,0)] group-hover:shadow-[0_0_30px_rgba(236,72,153,0.2)]">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">脆弱型內容</h3>
+        <p class="text-gray-400 leading-relaxed font-light flex-1">
+          寫下你當初開始的理由。記錄你學到的教訓。說出你撐下來的原因。沒人想看完美無缺的生活。如果你是一位全職媽媽，寫出你昨天哄睡失敗的崩潰心情。當你展現真實的脆弱，觀眾會湧入留言區分享他們的慘痛經驗。
+        </p>
+      </div>
+
+      <!-- Controversial -->
+      <div class="glass-card group flex flex-col opacity-0 animate-fade-in-up" style="animation-delay: 0.7s;">
+        <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-6 text-red-400 group-hover:scale-110 group-hover:bg-red-500/20 transition-all duration-300 shadow-[0_0_30px_rgba(239,68,68,0)] group-hover:shadow-[0_0_30px_rgba(239,68,68,0.2)]">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">爭議型內容</h3>
+        <p class="text-gray-400 leading-relaxed font-light flex-1">
+          挑出一個熱門話題。給出你最辛辣的觀點。當觀眾發現你說出他們藏在心底的話，他們會瘋狂轉發你的影片。這會讓留言區產生激烈討論。
+        </p>
+      </div>
+
+      <!-- Entertainment -->
+      <div class="glass-card group flex flex-col opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0)] group-hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">娛樂型內容</h3>
+        <p class="text-gray-400 leading-relaxed font-light flex-1">
+          逗觀眾笑。這類影片會讓人一直看到最後一秒。拍下你打翻咖啡弄髒鍵盤的瞬間。對比你在社群上的光鮮亮麗與現實中的居家宅樣。這會帶來最高的完播率。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tools Section (Bento Grid) -->
+  <section class="relative z-10 max-w-7xl mx-auto p-6 md:p-12 lg:px-24 pb-32">
+    <div class="text-center mb-16 opacity-0 animate-fade-in-up" style="animation-delay: 0.9s;">
+      <h2 class="text-4xl md:text-5xl font-display font-black text-white mb-4">實戰工具箱</h2>
+      <div class="h-1.5 w-24 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-500 mx-auto rounded-full shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 opacity-0 animate-fade-in-up" style="animation-delay: 1s;">
+      
+      <!-- Checklist -->
+      <div class="glass-card lg:col-span-5 flex flex-col group">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white">3分鐘行動計畫</h3>
+        </div>
+        <ul class="space-y-5 flex-1">
+          <li class="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+            <div class="mt-1 bg-cyan-500/20 rounded-full p-1 text-cyan-400 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span class="text-gray-300 font-light leading-relaxed">發布第一支「脆弱型」短影音。</span>
+          </li>
+          <li class="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+            <div class="mt-1 bg-cyan-500/20 rounded-full p-1 text-cyan-400 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span class="text-gray-300 font-light leading-relaxed">打開Instagram洞察報告。</span>
+          </li>
+          <li class="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+            <div class="mt-1 bg-cyan-500/20 rounded-full p-1 text-cyan-400 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span class="text-gray-300 font-light leading-relaxed">挑出過去7天觀看次數最高的影片。</span>
+          </li>
+          <li class="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+            <div class="mt-1 bg-cyan-500/20 rounded-full p-1 text-cyan-400 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span class="text-gray-300 font-light leading-relaxed">把這支影片的音檔換成目前排行榜前10名的熱門音樂。</span>
+          </li>
+          <li class="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+            <div class="mt-1 bg-cyan-500/20 rounded-full p-1 text-cyan-400 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span class="text-gray-300 font-light leading-relaxed">重新上傳發布。</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- AI Prompts -->
+      <div class="glass-card lg:col-span-7 flex flex-col group">
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center gap-4">
+            <div class="p-3 rounded-xl bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white">AI 提示詞工具包</h3>
+          </div>
+          <span class="text-xs font-medium px-2 py-1 bg-white/10 rounded text-gray-400">點擊複製</span>
+        </div>
+        
+        <p class="text-gray-400 mb-6 font-light">複製以下提示詞，貼給AI生成專屬文案。</p>
+        
+        <div class="space-y-4 flex-1">
+          
+          <div onclick="copyText(this)" class="relative p-5 rounded-xl bg-[#0a0a0f]/80 border border-white/10 hover:border-fuchsia-500/50 cursor-pointer transition-all group/prompt shadow-inner">
+            <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed prompt-text">「你現在是一位經營無露臉數位商品創業的Instagram創作者。受眾是台灣想增加收入的上班族。寫出5個『爭議型』短影音開場白。設定一個具體場景。例如：每天搭捷運通勤的疲憊感。使用簡短句子。動詞必須具體。不要寫出任何形容詞。」</p>
+            <div class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 group-hover/prompt:opacity-100 transition-opacity rounded-xl">
+              <span class="text-white font-semibold flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg> 點擊複製</span>
+            </div>
+          </div>
+
+          <div onclick="copyText(this)" class="relative p-5 rounded-xl bg-[#0a0a0f]/80 border border-white/10 hover:border-fuchsia-500/50 cursor-pointer transition-all group/prompt shadow-inner">
+            <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed prompt-text">「我要寫一篇『脆弱型』Instagram文案。受眾是育兒焦慮的台灣新手媽媽。告訴觀眾我昨天半夜看著小孩哭鬧，決定開始這份副業的過程。用第一人稱撰寫。句型限制在15個字以內。直接切入重點。」</p>
+            <div class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 group-hover/prompt:opacity-100 transition-opacity rounded-xl">
+              <span class="text-white font-semibold flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg> 點擊複製</span>
+            </div>
+          </div>
+
+          <div onclick="copyText(this)" class="relative p-5 rounded-xl bg-[#0a0a0f]/80 border border-white/10 hover:border-fuchsia-500/50 cursor-pointer transition-all group/prompt shadow-inner">
+            <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed prompt-text">「給我3個『教學型』短影音腳本。主題是『如何使用Notion規劃一天的工作』。列出3個具體操作步驟。結尾呼籲觀眾在底下留言索取免費模版。」</p>
+            <div class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 group-hover/prompt:opacity-100 transition-opacity rounded-xl">
+              <span class="text-white font-semibold flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg> 點擊複製</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Table Template -->
+      <div class="glass-card lg:col-span-12 p-0 overflow-hidden group">
+        <div class="p-8 pb-4 flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-violet-500/10 text-violet-400 border border-violet-500/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white">爆款文案模版</h3>
+        </div>
+        
+        <div class="overflow-x-auto p-4 md:p-8 pt-0">
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-white/10 text-gray-400 text-sm font-medium tracking-wider">
+                <th class="py-4 px-4">內容類型</th>
+                <th class="py-4 px-4">開場白 (Hook)</th>
+                <th class="py-4 px-4">貼文結構</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-300 divide-y divide-white/5 font-light">
+              <tr class="hover:bg-white/5 transition-colors group/row">
+                <td class="py-5 px-4 whitespace-nowrap">
+                  <span class="bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-3 py-1.5 rounded-lg text-sm font-medium">教學型</span>
+                </td>
+                <td class="py-5 px-4 group-hover/row:text-white transition-colors">「別再做這3件毀掉你Instagram觸及率的蠢事。」</td>
+                <td class="py-5 px-4 text-gray-400">點出錯誤作法。給出正確替代方案。呼籲觀眾收藏貼文。</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors group/row">
+                <td class="py-5 px-4 whitespace-nowrap">
+                  <span class="bg-red-500/10 text-red-300 border border-red-500/20 px-3 py-1.5 rounded-lg text-sm font-medium">爭議型</span>
+                </td>
+                <td class="py-5 px-4 group-hover/row:text-white transition-colors">「朝九晚五的薪水買不到你的自由。這才是真相。」</td>
+                <td class="py-5 px-4 text-gray-400">表達強烈觀點。分享你的轉變契機。引導觀眾留言討論。</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors group/row">
+                <td class="py-5 px-4 whitespace-nowrap">
+                  <span class="bg-violet-500/10 text-violet-300 border border-violet-500/20 px-3 py-1.5 rounded-lg text-sm font-medium">願景型</span>
+                </td>
+                <td class="py-5 px-4 group-hover/row:text-white transition-colors">「想像一下，你睡醒看到手機跳出3筆入帳通知。」</td>
+                <td class="py-5 px-4 text-gray-400">描繪具體理想生活。貼上別人的真實評價。給出產品連結。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-white text-dark px-6 py-3 rounded-full font-bold shadow-[0_10px_40px_rgba(255,255,255,0.2)] opacity-0 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-2">
+    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+    已複製提示詞
+  </div>
+
+  <script>
+    function copyText(element) {
+      const text = element.querySelector('.prompt-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => {
+          toast.classList.add('opacity-0');
+        }, 2000);
+      });
+    }
+
+    // Staggered fade in observer for elements not initially in viewport
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.animate-fade-in-up').forEach((el) => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
